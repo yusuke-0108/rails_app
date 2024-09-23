@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: bash -c "cd /myapp && bundle exec rails server -b 0.0.0.0"
+    image: boockers
+    volumes:
+      - ".:/myapp"
+    ports:
+      - "3000:3000"
+    tty: true
